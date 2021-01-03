@@ -2,8 +2,6 @@
  * school.cc
  * Author: Louis Fiacco
  * Date: 05/01/2019
- * Class: CSCI 132
- * Assignment: Homework 8
  * Purpose: contains the specification for a new class named School for storing information about a single graduate school program
  * Input: The info for the schools
  * Output: various funtions defined for the School class 
