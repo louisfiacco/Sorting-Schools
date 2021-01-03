@@ -1,0 +1,68 @@
+#include "gradSchools.h"
+    
+/*Implement functions from gradSchools.h file here */
+
+GradSchools::GradSchools()
+ {
+   schools.clear();
+ }
+
+
+void GradSchools::addSchool (string name, string state, int women, int rateAI, int rateSys,int rateTheory, int effect, int ratePubs)
+ {   
+schools.insert(schools.size(), (School(name, state, women, rateAI, rateSys, rateTheory, effect, ratePubs)));
+ }
+
+
+void GradSchools::computeRatings (int weightWomen, int weightAI, int weightSys, int weightTheory, int weightEffect, int weightPubs)
+ {
+ for (int i = 0; i < schools.size()-1; i++)
+     {
+       School entry;
+       schools.retrieve(i, entry);
+       entry.computeRating(weightWomen, weightAI, weightSys, weightTheory, weightEffect, weightPubs);
+       schools.replace(i, entry);
+       
+     }
+ }
+
+
+void GradSchools::rankSchools (int weightWomen, int weightAI, int weightSys, int weightTheory, int weightEffect, int weightPubs)
+ {
+   computeRatings(weightWomen, weightAI, weightSys, weightTheory, weightEffect, weightPubs);
+   schools.selection_sort();
+   for (int i = schools.size()-1; i>= 0; i--)
+     {
+       School x;
+       schools.retrieve(i, x);
+       cout<<x.name<<endl;
+     }
+
+ }
+
+
+void GradSchools::rankSchoolsFactor (string factor)
+ {
+     if(factor == "women"){
+         rankSchools(1, 0,0,0,0,0);
+     }
+     if(factor == "AI"){
+         rankSchools(0,1,0,0,0,0);
+     }
+      if(factor == "Sys"){
+         rankSchools(0,0,1,0,0,0);
+     }
+ }
+
+
+void GradSchools::printGradSchools()
+ {
+   for (int i = 0; i < schools.size()-1; i++)
+     {
+       School entry;
+       schools.retrieve(i, entry);
+       entry.printSchoolInfo();
+       cout << "test";
+       cout<<endl;
+     }
+ }

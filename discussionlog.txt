@@ -1,0 +1,10 @@
+
+/***************************************************************************
+ * discussionlog.txt
+ * Author: Louis Fiacco
+ * Date: 05/01/2019
+ * Class: CSCI 132
+ * Assignment: Homework 8
+ ***************************************************************************/
+
+I did not hold any discussions with anyone about this project.
