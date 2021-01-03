@@ -2,8 +2,6 @@
  * gradSchools.cc
  * Author: Louis Fiacco
  * Date: 05/01/2019
- * Class: CSCI 132
- * Assignment: Homework 8
  * Purpose: contains the definition of a new class named GradSchools that stores information about multiple School objects that are maintained in a Sortable_list
  * Input: Info for the specific schools in the gradSchools class
  * Output: Does various functions like rank the schools
